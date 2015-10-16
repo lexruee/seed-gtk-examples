@@ -1,0 +1,22 @@
+#!/usr/bin/env seed
+
+Gtk = imports.gi.Gtk;
+
+Gtk.init(null, null);
+
+function on_button_clicked()
+{
+    print("Button clicked!");
+}
+
+var window = new Gtk.Window();
+window.set_title("Button");
+window.signal.hide.connect(Gtk.main_quit);
+
+var button = new Gtk.Button({label: "Click Me"});
+button.signal.clicked.connect(on_button_clicked);
+window.add(button);
+
+window.show_all();
+
+Gtk.main();
