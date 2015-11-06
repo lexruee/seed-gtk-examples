@@ -7,7 +7,7 @@ Gtk.init(null, null);
 var window = new Gtk.Window();
 window.set_title("Separator");
 window.set_default_size(400, 200);
-window.signal.hide.connect(Gtk.main_quit);
+window.signal.connect("destroy", Gtk.main_quit);
 
 var box = new Gtk.Box();
 window.add(box);

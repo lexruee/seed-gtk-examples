@@ -8,7 +8,7 @@ var window = new Gtk.Window();
 window.set_default_size(200, 200);
 window.set_title("Box");
 window.set_border_width(5);
-window.signal.hide.connect(Gtk.main_quit);
+window.signal.connect("destroy", Gtk.main_quit);
 
 var box1 = new Gtk.Box();
 box1.set_spacing(5);

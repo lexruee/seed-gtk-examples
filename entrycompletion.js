@@ -24,7 +24,7 @@ function on_mode_toggled(radiobutton)
 
 var window = new Gtk.Window();
 window.set_title("EntryCompletion");
-window.signal.hide.connect(Gtk.main_quit);
+window.signal.connect("destroy", Gtk.main_quit);
 
 var grid = new Gtk.Grid();
 window.add(grid);
@@ -54,12 +54,12 @@ grid.attach(entry, 0, 0, 1, 1);
 
 var radiobuttonPopup = new Gtk.RadioButton({label: "Popup Completion"});
 radiobuttonPopup.mode = 0;
-radiobuttonPopup.signal.toggled.connect(on_mode_toggled);
+radiobuttonPopup.signal.connect("toggled", on_mode_toggled);
 grid.attach(radiobuttonPopup, 0, 1, 1, 1);
 var radiobuttonInline = new Gtk.RadioButton({label: "Inline Completion"});
 radiobuttonInline.join_group(radiobuttonPopup);
 radiobuttonInline.mode = 1;
-radiobuttonInline.signal.toggled.connect(on_mode_toggled);
+radiobuttonInline.signal.connect("toggled", on_mode_toggled);
 grid.attach(radiobuttonInline, 0, 2, 1, 1);
 
 window.show_all();

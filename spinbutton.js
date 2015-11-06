@@ -11,13 +11,13 @@ function on_spinbutton_changed(spinbutton)
 
 var window = new Gtk.Window();
 window.set_title("SpinButton");
-window.signal.hide.connect(Gtk.main_quit);
+window.signal.connect("destroy", Gtk.main_quit);
 
 var spinbutton = new Gtk.SpinButton();
 spinbutton.set_range(0, 100);
 spinbutton.set_value(50);
 spinbutton.set_increments(1, 10);
-spinbutton.signal.value_changed.connect(on_spinbutton_changed)
+spinbutton.signal.connect("value-changed", on_spinbutton_changed)
 window.add(spinbutton);
 
 window.show_all();

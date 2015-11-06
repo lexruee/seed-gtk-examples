@@ -15,7 +15,7 @@ function on_expander_activate()
 var window = new Gtk.Window();
 window.set_title("Expander");
 window.set_border_width(5);
-window.signal.hide.connect(Gtk.main_quit);
+window.signal.connect("destroy", Gtk.main_quit);
 
 var expander = new Gtk.Expander({label: "_Expander"});
 expander.set_use_underline(true);

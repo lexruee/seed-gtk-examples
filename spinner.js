@@ -17,7 +17,7 @@ function on_button_stop_clicked()
 var window = new Gtk.Window();
 window.set_default_size(200, 200);
 window.set_title("Spinner");
-window.signal.hide.connect(Gtk.main_quit);
+window.signal.connect("destroy", Gtk.main_quit);
 
 var grid = new Gtk.Grid();
 window.add(grid);
@@ -28,11 +28,11 @@ spinner.set_hexpand(true);
 grid.attach(spinner, 0, 0, 2, 1);
 
 var buttonStart = new Gtk.Button({label: "Start"});
-buttonStart.signal.clicked.connect(on_button_start_clicked);
+buttonStart.signal.connect("clicked", on_button_start_clicked);
 grid.attach(buttonStart, 0, 1, 1, 1);
 
 var buttonStop = new Gtk.Button({label: "Stop"});
-buttonStop.signal.clicked.connect(on_button_stop_clicked);
+buttonStop.signal.connect("clicked", on_button_stop_clicked);
 grid.attach(buttonStop, 1, 1, 1, 1);
 
 window.show_all();

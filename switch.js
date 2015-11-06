@@ -14,7 +14,7 @@ function on_switch_toggled(widget)
 
 var window = new Gtk.Window({type: Gtk.WindowType.TOPLEVEL});
 window.set_title("Switch");
-window.signal.connect("hide", Gtk.main_quit);
+window.signal.connect("destroy", Gtk.main_quit);
 
 var gtkswitch = new Gtk.Switch();
 gtkswitch.signal.connect("notify::active", on_switch_toggled);

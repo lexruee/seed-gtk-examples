@@ -17,7 +17,7 @@ function on_close_clicked()
 var window = new Gtk.Window();
 window.set_title("Revealer");
 window.set_border_width(5);
-window.signal.hide.connect(Gtk.main_quit);
+window.signal.connect("destroy", Gtk.main_quit);
 
 var grid = new Gtk.Grid();
 window.add(grid);
@@ -28,7 +28,6 @@ grid.attach(buttonbox, 0, 0, 1, 1);
 var buttonOpen = new Gtk.Button({label: "Open"});
 buttonOpen.signal.connect("clicked", on_open_clicked)
 buttonbox.add(buttonOpen);
-
 var buttonClose = new Gtk.Button({label: "Close"});
 buttonClose.signal.connect("clicked", on_close_clicked)
 buttonbox.add(buttonClose);

@@ -11,11 +11,11 @@ function on_entry_activated()
 
 var window = new Gtk.Window();
 window.set_title("Entry");
-window.signal.hide.connect(Gtk.main_quit);
+window.signal.connect("destroy", Gtk.main_quit);
 
 var entry = new Gtk.Entry();
 entry.set_placeholder_text("Text in an Entry...");
-entry.signal.activate.connect(on_entry_activated);
+entry.signal.connect("activate", on_entry_activated);
 window.add(entry);
 
 window.show_all();

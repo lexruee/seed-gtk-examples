@@ -8,7 +8,7 @@ var window = new Gtk.Window();
 window.set_title("AspectFrame");
 window.set_default_size(200, 200);
 window.set_border_width(5);
-window.signal.hide.connect(Gtk.main_quit);
+window.signal.connect("destroy", Gtk.main_quit);
 
 var aspectframe = new Gtk.AspectFrame({label: "Frame",
                                         xalign: 0,

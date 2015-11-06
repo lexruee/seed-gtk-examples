@@ -7,7 +7,7 @@ Gtk.init(null, null);
 var window = new Gtk.Window();
 window.set_title("Grid");
 window.set_border_width(5);
-window.signal.hide.connect(Gtk.main_quit);
+window.signal.connect("destroy", Gtk.main_quit);
 
 var grid = new Gtk.Grid();
 grid.set_row_spacing(5);
