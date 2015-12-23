@@ -5,8 +5,8 @@ Gtk = imports.gi.Gtk;
 Gtk.init(null, null);
 
 var window = new Gtk.Window({type: Gtk.WindowType.TOPLEVEL});
-window.set_default_size(200, 200);
 window.set_title("ActionBar");
+window.set_default_size(200, 200);
 window.signal.connect("destroy", Gtk.main_quit);
 
 var grid = new Gtk.Grid();

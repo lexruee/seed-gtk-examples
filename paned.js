@@ -5,8 +5,8 @@ const Gtk = imports.gi.Gtk;
 Gtk.init(null, null);
 
 var window = new Gtk.Window();
-window.set_default_size(350, 200);
 window.set_title("Paned");
+window.set_default_size(350, 200);
 window.signal.connect("destroy", Gtk.main_quit);
 
 var hpaned = new Gtk.Paned({orientation: Gtk.Orientation.HORIZONTAL});

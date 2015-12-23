@@ -5,8 +5,8 @@ const Gtk = imports.gi.Gtk;
 Gtk.init(null, null);
 
 var window = new Gtk.Window();
-window.set_default_size(200, 200);
 window.set_title("Box");
+window.set_default_size(200, 200);
 window.set_border_width(5);
 window.signal.connect("destroy", Gtk.main_quit);
 

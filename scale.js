@@ -17,8 +17,8 @@ function on_scale_changed(scale)
 }
 
 var window = new Gtk.Window();
-window.set_default_size(400, 200);
 window.set_title("Scale");
+window.set_default_size(400, 200);
 window.signal.connect("destroy", Gtk.main_quit);
 
 var grid = new Gtk.Grid();

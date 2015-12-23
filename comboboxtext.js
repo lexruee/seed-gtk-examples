@@ -10,8 +10,8 @@ function on_comboboxtext_changed()
 }
 
 var window = new Gtk.Window();
-window.set_default_size(200, -1);
 window.set_title("ComboBoxText");
+window.set_default_size(200, -1);
 window.signal.connect("destroy", Gtk.main_quit);
 
 var comboboxtext = new Gtk.ComboBoxText();

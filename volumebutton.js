@@ -10,7 +10,7 @@ function on_volume_button_changed(volumebutton)
 }
 
 var window = new Gtk.Window();
-window.set_title("ScaleButton");
+window.set_title("VolumeButton");
 window.set_default_size(200, 200);
 window.signal.connect("destroy", Gtk.main_quit);
 
