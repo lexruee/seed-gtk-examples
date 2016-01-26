@@ -6,7 +6,7 @@ Gtk.init(null, null);
 
 function on_font_set()
 {
-    print("Font set to " + fontbutton.get_font_name());
+    print("Font set to " + fontbutton.get_font());
 }
 
 var window = new Gtk.Window();
