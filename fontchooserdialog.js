@@ -1,10 +1,10 @@
 #!/usr/bin/env seed
 
-Gtk = imports.gi.Gtk;
+const Gtk = imports.gi.Gtk;
 
 Gtk.init(null, null);
 
-fontchooserdialog = new Gtk.FontChooserDialog();
+var fontchooserdialog = new Gtk.FontChooserDialog();
 fontchooserdialog.set_title("FontChooserDialog");
 
 if (fontchooserdialog.run() == Gtk.ResponseType.OK)

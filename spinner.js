@@ -1,6 +1,6 @@
 #!/usr/bin/env seed
 
-Gtk = imports.gi.Gtk;
+const Gtk = imports.gi.Gtk;
 
 Gtk.init(null, null);
 
@@ -30,7 +30,6 @@ grid.attach(spinner, 0, 0, 2, 1);
 var buttonStart = new Gtk.Button({label: "Start"});
 buttonStart.signal.connect("clicked", on_button_start_clicked);
 grid.attach(buttonStart, 0, 1, 1, 1);
-
 var buttonStop = new Gtk.Button({label: "Stop"});
 buttonStop.signal.connect("clicked", on_button_stop_clicked);
 grid.attach(buttonStop, 1, 1, 1, 1);

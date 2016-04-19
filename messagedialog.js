@@ -1,12 +1,12 @@
 #!/usr/bin/env seed
 
-Gtk = imports.gi.Gtk;
+const Gtk = imports.gi.Gtk;
 
 Gtk.init(null, null);
 
 function on_button_clicked(button)
 {
-    messagedialog.message_type = button.type;
+    messagedialog.message_type = button.message_type;
     messagedialog.run();
     messagedialog.hide();
 }
@@ -16,26 +16,27 @@ window.set_title("MessageDialog");
 window.signal.connect("destroy", Gtk.main_quit);
 
 var buttonbox = new Gtk.ButtonBox();
+buttonbox.set_spacing(5);
 window.add(buttonbox);
 
 var button = new Gtk.Button({label: "Information"});
-button.type = Gtk.MessageType.INFO;
+button.message_type = Gtk.MessageType.INFO;
 button.signal.connect("clicked", on_button_clicked);
 buttonbox.add(button);
 var button = new Gtk.Button({label: "Question"});
-button.type = Gtk.MessageType.QUESTION;
+button.message_type = Gtk.MessageType.QUESTION;
 button.signal.connect("clicked", on_button_clicked);
 buttonbox.add(button);
 var button = new Gtk.Button({label: "Warning"});
-button.type = Gtk.MessageType.WARNING;
+button.message_type = Gtk.MessageType.WARNING;
 button.signal.connect("clicked", on_button_clicked);
 buttonbox.add(button);
 var button = new Gtk.Button({label: "Error"});
-button.type = Gtk.MessageType.ERROR;
+button.message_type = Gtk.MessageType.ERROR;
 button.signal.connect("clicked", on_button_clicked);
 buttonbox.add(button);
 var button = new Gtk.Button({label: "Other"});
-button.type = Gtk.MessageType.OTHER;
+button.message_type = Gtk.MessageType.OTHER;
 button.signal.connect("clicked", on_button_clicked);
 buttonbox.add(button);
 

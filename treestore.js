@@ -1,7 +1,7 @@
 #!/usr/bin/env seed
 
-Gtk = imports.gi.Gtk;
-GObject = imports.gi.GObject;
+const Gtk = imports.gi.Gtk;
+const GObject = imports.gi.GObject;
 
 Gtk.init(null, null);
 
@@ -30,6 +30,7 @@ treestore.append(treeiter2, treeiter.iter);
 treestore.set_value(treeiter2.iter, 0, "1882 Holder Street, Burden", -1);
 
 var cellrenderertext = new Gtk.CellRendererText();
+
 var treeview = new Gtk.TreeView();
 treeview.set_model(treestore);
 window.add(treeview);

@@ -1,6 +1,6 @@
 #!/usr/bin/env seed
 
-Gtk = imports.gi.Gtk;
+const Gtk = imports.gi.Gtk;
 
 Gtk.init(null, null);
 
@@ -8,7 +8,7 @@ function on_push_clicked()
 {
     count += 1;
 
-    message = "Message number " + count;
+    var message = "Message number " + count;
     statusbar.push(context, message);
 }
 

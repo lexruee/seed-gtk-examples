@@ -1,7 +1,7 @@
 #!/usr/bin/env seed
 
-Gtk = imports.gi.Gtk;
-GdkPixbuf = imports.gi.GdkPixbuf;
+const Gtk = imports.gi.Gtk;
+const GdkPixbuf = imports.gi.GdkPixbuf;
 
 Gtk.init(null, null);
 

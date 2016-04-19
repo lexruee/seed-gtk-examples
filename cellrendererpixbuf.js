@@ -1,8 +1,8 @@
 #!/usr/bin/env seed
 
-Gtk = imports.gi.Gtk;
-GdkPixbuf = imports.gi.GdkPixbuf;
-GObject = imports.gi.GObject;
+const Gtk = imports.gi.Gtk;
+const GdkPixbuf = imports.gi.GdkPixbuf;
+const GObject = imports.gi.GObject;
 
 Gtk.init(null, null);
 
@@ -15,17 +15,17 @@ liststore.set_column_types(2, [GObject.TYPE_STRING, GObject.TYPE_OBJECT]);
 
 var treeiter = {};
 
-icon = new GdkPixbuf.Pixbuf.from_file_at_size("_resources/fedora.ico", 16, 16);
+var icon = new GdkPixbuf.Pixbuf.from_file_at_size("_resources/fedora.ico", 16, 16);
 liststore.append(treeiter);
 liststore.set_value(treeiter.iter, 0, "Fedora", -1);
 liststore.set_value(treeiter.iter, 1, icon, -1);
 
-icon = new GdkPixbuf.Pixbuf.from_file_at_size("_resources/debian.ico", 16, 16);
+var icon = new GdkPixbuf.Pixbuf.from_file_at_size("_resources/debian.ico", 16, 16);
 liststore.append(treeiter);
 liststore.set_value(treeiter.iter, 0, "Debian", -1);
 liststore.set_value(treeiter.iter, 1, icon, -1);
 
-icon = new GdkPixbuf.Pixbuf.from_file_at_size("_resources/gentoo.ico", 16, 16);
+var icon = new GdkPixbuf.Pixbuf.from_file_at_size("_resources/gentoo.ico", 16, 16);
 liststore.append(treeiter);
 liststore.set_value(treeiter.iter, 0, "Gentoo", -1);
 liststore.set_value(treeiter.iter, 1, icon, -1);

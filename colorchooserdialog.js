@@ -4,7 +4,7 @@ const Gtk = imports.gi.Gtk;
 
 Gtk.init(null, null);
 
-colorchooserdialog = new Gtk.ColorChooserDialog();
+var colorchooserdialog = new Gtk.ColorChooserDialog();
 colorchooserdialog.set_title("ColorChooserDialog");
 
 if (colorchooserdialog.run() == Gtk.ResponseType.OK)

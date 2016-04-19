@@ -1,6 +1,6 @@
 #!/usr/bin/env gjs
 
-Gtk = imports.gi.Gtk;
+const Gtk = imports.gi.Gtk;
 
 Gtk.init(null, null);
 

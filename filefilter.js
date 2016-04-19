@@ -4,23 +4,23 @@ const Gtk = imports.gi.Gtk;
 
 Gtk.init(null, null);
 
-filechooserdialog = new Gtk.FileChooserDialog();
+var filechooserdialog = new Gtk.FileChooserDialog();
 filechooserdialog.set_title("FileFilter");
 filechooserdialog.add_button("_Cancel", Gtk.ResponseType.CANCEL);
 filechooserdialog.add_button("_Open", Gtk.ResponseType.OK);
 
-filefilter = new Gtk.FileFilter();
+var filefilter = new Gtk.FileFilter();
 filefilter.set_name("All Items");
 filefilter.add_pattern("*");
 filechooserdialog.add_filter(filefilter);
 
-filefilter = new Gtk.FileFilter();
+var filefilter = new Gtk.FileFilter();
 filefilter.set_name("Audio")
 filefilter.add_mime_type("audio/flac")
 filefilter.add_mime_type("audio/ogg")
 filechooserdialog.add_filter(filefilter)
 
-filefilter = new Gtk.FileFilter();
+var filefilter = new Gtk.FileFilter();
 filefilter.set_name("Images")
 filefilter.add_pattern("*.png")
 filefilter.add_pattern("*.jpg")

@@ -1,8 +1,8 @@
 #!/usr/bin/env gjs
 
-Gtk = imports.gi.Gtk;
-GdkPixbuf = imports.gi.GdkPixbuf;
-GObject = imports.gi.GObject;
+const Gtk = imports.gi.Gtk;
+const GdkPixbuf = imports.gi.GdkPixbuf;
+const GObject = imports.gi.GObject;
 
 Gtk.init(null, null);
 

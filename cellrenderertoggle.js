@@ -1,7 +1,7 @@
 #!/usr/bin/env seed
 
-Gtk = imports.gi.Gtk;
-GObject = imports.gi.GObject;
+const Gtk = imports.gi.Gtk;
+const GObject = imports.gi.GObject;
 
 Gtk.init(null, null);
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env seed
 
-Gtk = imports.gi.Gtk;
+const Gtk = imports.gi.Gtk;
 
 Gtk.init(null, null);
 
@@ -11,10 +11,10 @@ window.set_border_width(5);
 window.signal.connect("destroy", Gtk.main_quit);
 
 var aspectframe = new Gtk.AspectFrame({label: "Frame",
-                                        xalign: 0,
-                                        yalign: 0,
-                                        ratio: 1.0,
-                                        obey_child: false});
+                                       xalign: 0,
+                                       yalign: 0,
+                                       ratio: 1.0,
+                                       obey_child: false});
 window.add(aspectframe);
 
 var label = new Gtk.Label({label: "Label in a Frame"});

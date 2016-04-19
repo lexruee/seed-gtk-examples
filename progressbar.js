@@ -1,7 +1,7 @@
 #!/usr/bin/env seed
 
-Gtk = imports.gi.Gtk;
-GLib = imports.gi.GLib;
+const Gtk = imports.gi.Gtk;
+const GLib = imports.gi.GLib;
 
 Gtk.init(null, null);
 
