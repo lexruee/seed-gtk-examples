@@ -4,7 +4,7 @@ const Gtk = imports.gi.Gtk;
 
 Gtk.init(null, null);
 
-var window = new Gtk.Window({type: Gtk.WindowType.TOPLEVEL});
+var window = new Gtk.Window();
 window.set_title("Toolbar");
 window.set_default_size(-1, 200);
 window.signal.connect("destroy", Gtk.main_quit);
