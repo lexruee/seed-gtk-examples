@@ -23,8 +23,8 @@ function on_checkbutton_toggled(checkbutton)
 }
 
 var window = new Gtk.Window();
-window.set_title("ProgressBar");
-window.signal.connect("destroy", Gtk.main_quit);
+window.set_title('ProgressBar');
+window.signal.connect('destroy', Gtk.main_quit);
 
 var grid = new Gtk.Grid();
 window.add(grid);
@@ -32,8 +32,8 @@ window.add(grid);
 var progressbar = new Gtk.ProgressBar();
 grid.attach(progressbar, 0, 0, 1, 1);
 
-var checkbutton = new Gtk.CheckButton({label: "Show Text"});
-checkbutton.signal.connect("toggled", on_checkbutton_toggled);
+var checkbutton = new Gtk.CheckButton({label: 'Show Text'});
+checkbutton.signal.connect('toggled', on_checkbutton_toggled);
 grid.attach(checkbutton, 1, 0, 1, 1);
 
 GLib.timeout_add(GLib.PRIORITY_DEFAULT, 500, pulse_function);

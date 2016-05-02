@@ -23,8 +23,8 @@ function on_mode_toggled(radiobutton)
 }
 
 var window = new Gtk.Window();
-window.set_title("EntryCompletion");
-window.signal.connect("destroy", Gtk.main_quit);
+window.set_title('EntryCompletion');
+window.signal.connect('destroy', Gtk.main_quit);
 
 var grid = new Gtk.Grid();
 window.add(grid);
@@ -34,15 +34,15 @@ liststore.set_column_types(1, [GObject.TYPE_STRING]);
 
 var treeiter = {};
 liststore.append(treeiter);
-liststore.set_value(treeiter.iter, 0, [GObject.TYPE_STRING, "Christine"]);
+liststore.set_value(treeiter.iter, 0, [GObject.TYPE_STRING, 'Christine']);
 liststore.append(treeiter);
-liststore.set_value(treeiter.iter, 0, [GObject.TYPE_STRING, "Zoey"]);
+liststore.set_value(treeiter.iter, 0, [GObject.TYPE_STRING, 'Zoey']);
 liststore.append(treeiter);
-liststore.set_value(treeiter.iter, 0, [GObject.TYPE_STRING, "Vanessa"]);
+liststore.set_value(treeiter.iter, 0, [GObject.TYPE_STRING, 'Vanessa']);
 liststore.append(treeiter);
-liststore.set_value(treeiter.iter, 0, [GObject.TYPE_STRING, "Martina"]);
+liststore.set_value(treeiter.iter, 0, [GObject.TYPE_STRING, 'Martina']);
 liststore.append(treeiter);
-liststore.set_value(treeiter.iter, 0, [GObject.TYPE_STRING, "Maxine"]);
+liststore.set_value(treeiter.iter, 0, [GObject.TYPE_STRING, 'Maxine']);
 
 var entrycompletion = new Gtk.EntryCompletion();
 entrycompletion.set_model(liststore);
@@ -52,14 +52,14 @@ var entry = new Gtk.Entry();
 entry.set_completion(entrycompletion);
 grid.attach(entry, 0, 0, 1, 1);
 
-var radiobuttonPopup = new Gtk.RadioButton({label: "Popup Completion"});
+var radiobuttonPopup = new Gtk.RadioButton({label: 'Popup Completion'});
 radiobuttonPopup.mode = 0;
-radiobuttonPopup.signal.connect("toggled", on_mode_toggled);
+radiobuttonPopup.signal.connect('toggled', on_mode_toggled);
 grid.attach(radiobuttonPopup, 0, 1, 1, 1);
-var radiobuttonInline = new Gtk.RadioButton({label: "Inline Completion"});
+var radiobuttonInline = new Gtk.RadioButton({label: 'Inline Completion'});
 radiobuttonInline.join_group(radiobuttonPopup);
 radiobuttonInline.mode = 1;
-radiobuttonInline.signal.connect("toggled", on_mode_toggled);
+radiobuttonInline.signal.connect('toggled', on_mode_toggled);
 grid.attach(radiobuttonInline, 0, 2, 1, 1);
 
 window.show_all();

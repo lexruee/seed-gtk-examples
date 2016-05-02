@@ -10,14 +10,14 @@ function on_entry_changed(entry)
 }
 
 var window = new Gtk.Window();
-window.set_title("LevelBar");
-window.signal.connect("destroy", Gtk.main_quit);
+window.set_title('LevelBar');
+window.signal.connect('destroy', Gtk.main_quit);
 
 var grid = new Gtk.Grid();
 window.add(grid);
 
 var entry = new Gtk.Entry();
-entry.signal.connect("changed", on_entry_changed);
+entry.signal.connect('changed', on_entry_changed);
 grid.attach(entry, 0, 0, 1, 1);
 
 var levelbar = new Gtk.LevelBar();

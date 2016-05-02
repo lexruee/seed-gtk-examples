@@ -9,10 +9,10 @@ function on_page_clicked(button)
     stack.set_visible_child_name(button.page);
 }
 
-var window = new Gtk.Window({type: Gtk.WindowType.TOPLEVEL});
-window.set_title("Stack");
+var window = new Gtk.Window();
+window.set_title('Stack');
 window.set_default_size(200, 200);
-window.signal.connect("destroy", Gtk.main_quit);
+window.signal.connect('destroy', Gtk.main_quit);
 
 var grid = new Gtk.Grid();
 window.add(grid);
@@ -28,12 +28,12 @@ for (i = 1; i < 6; i++)
 {
     var name = i.toString();
 
-    var label = new Gtk.Label({label: "Page " + name});
+    var label = new Gtk.Label({label: 'Page ' + name});
     stack.add_named(label, name);
 
-    var button = new Gtk.Button({label: "Page " + name});
+    var button = new Gtk.Button({label: 'Page ' + name});
     button.page = name
-    button.signal.connect("clicked", on_page_clicked);
+    button.signal.connect('clicked', on_page_clicked);
     grid.attach(button, i, 1, 1, 1);
 }
 

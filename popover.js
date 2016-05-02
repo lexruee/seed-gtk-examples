@@ -9,7 +9,7 @@ function on_button_clicked()
     popover.show_all();
 }
 
-var window = new Gtk.Window({type: Gtk.WindowType.TOPLEVEL});
+var window = new Gtk.Window();
 window.set_default_size(250, 250);
 window.set_title('Popover');
 window.signal.connect('destroy', Gtk.main_quit);

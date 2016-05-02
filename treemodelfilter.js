@@ -22,9 +22,9 @@ function filter_visible(model, treeiter, data)
 }
 
 var window = new Gtk.Window();
-window.set_title("TreeModelFilter");
+window.set_title('TreeModelFilter');
 window.set_default_size(200, 200);
-window.signal.connect("destroy", Gtk.main_quit);
+window.signal.connect('destroy', Gtk.main_quit);
 
 var grid = new Gtk.Grid();
 window.add(grid);
@@ -32,11 +32,11 @@ window.add(grid);
 var liststore = new Gtk.ListStore();
 liststore.set_column_types(2, [GObject.TYPE_STRING, GObject.TYPE_INT]);
 
-var students = [{name: "Andrew", exam: 65},
-                {name: "Marcus", exam: 93},
-                {name: "Timothy", exam: 48},
-                {name: "Lucas", exam: 77},
-                {name: "Fred", exam: 72}]
+var students = [{name: 'Andrew', exam: 65},
+                {name: 'Marcus', exam: 93},
+                {name: 'Timothy', exam: 48},
+                {name: 'Lucas', exam: 77},
+                {name: 'Fred', exam: 72}]
 
 for (var i=0; i < students.length; i++)
 {
@@ -46,8 +46,8 @@ for (var i=0; i < students.length; i++)
     liststore.set_value(treeiter.iter, 1, students[i].exam, -1);
 }
 
-var checkbutton = new Gtk.CheckButton({label: "Show Only Passing Scores"});
-checkbutton.signal.connect("toggled", on_present_toggled);
+var checkbutton = new Gtk.CheckButton({label: 'Show Only Passing Scores'});
+checkbutton.signal.connect('toggled', on_present_toggled);
 grid.attach(checkbutton, 0, 1, 1, 1);
 
 var treemodelfilter = liststore.filter_new();
@@ -61,14 +61,14 @@ grid.attach(treeview, 0, 0, 1, 1);
 
 var cellrenderertext = new Gtk.CellRendererText();
 
-var treeviewcolumn = new Gtk.TreeViewColumn({title: "Student"});
+var treeviewcolumn = new Gtk.TreeViewColumn({title: 'Student'});
 treeviewcolumn.pack_start(cellrenderertext, true);
-treeviewcolumn.add_attribute(cellrenderertext, "text", 0);
+treeviewcolumn.add_attribute(cellrenderertext, 'text', 0);
 treeview.append_column(treeviewcolumn);
 
-var treeviewcolumn = new Gtk.TreeViewColumn({title: "Exam"});
+var treeviewcolumn = new Gtk.TreeViewColumn({title: 'Exam'});
 treeviewcolumn.pack_start(cellrenderertext, true);
-treeviewcolumn.add_attribute(cellrenderertext, "text", 1);
+treeviewcolumn.add_attribute(cellrenderertext, 'text', 1);
 treeview.append_column(treeviewcolumn);
 
 window.show_all();

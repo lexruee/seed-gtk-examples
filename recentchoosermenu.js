@@ -10,7 +10,7 @@ function on_item_activated()
 
     if (uri != null)
     {
-        print("Recent document selected: " + uri);
+        print('Recent document selected: ' + uri);
     }
 }
 

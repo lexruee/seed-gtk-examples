@@ -5,12 +5,12 @@ const Gtk = imports.gi.Gtk;
 Gtk.init(null, null);
 
 var colorchooserdialog = new Gtk.ColorChooserDialog();
-colorchooserdialog.set_title("ColorChooserDialog");
+colorchooserdialog.set_title('ColorChooserDialog');
 
 if (colorchooserdialog.run() == Gtk.ResponseType.OK)
 {
     var color = colorchooserdialog.get_rgba();
-    print("Color set to " + color.color.red + ", " + color.color.green + ", " + color.color.blue);
+    print('Color set to ' + color.color.red + ', ' + color.color.green + ', ' + color.color.blue);
 }
 
 colorchooserdialog.destroy();

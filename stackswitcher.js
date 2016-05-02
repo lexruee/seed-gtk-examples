@@ -4,10 +4,10 @@ const Gtk = imports.gi.Gtk;
 
 Gtk.init(null, null);
 
-var window = new Gtk.Window({type: Gtk.WindowType.TOPLEVEL});
-window.set_title("StackSwitcher");
+var window = new Gtk.Window();
+window.set_title('StackSwitcher');
 window.set_default_size(200, 200);
-window.signal.connect("destroy", Gtk.main_quit);
+window.signal.connect('destroy', Gtk.main_quit);
 
 var grid = new Gtk.Grid();
 window.add(grid);
@@ -26,7 +26,7 @@ var i;
 for (i = 1; i < 6; i++)
 {
     var name = i.toString();
-    var title = "Page " + name;
+    var title = 'Page ' + name;
 
     var label = new Gtk.Label({label: title});
     stack.add_titled(label, name, title);
